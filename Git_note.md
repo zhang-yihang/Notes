@@ -7,7 +7,7 @@ $ git init
 ```
 ## add file and commit  
 ```
-$ git add <name_file>  
+$ git add <name_file>  // after each change 
 $ git commit -m 'messages'  
 ```
 ## commands
@@ -15,3 +15,4 @@ $ git commit -m 'messages'
 $ git status // get the status of repository
 $ git diff <file> // get the difference 
 ```
+
