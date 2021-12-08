@@ -14,5 +14,9 @@ $ git commit -m 'messages'
 ```
 $ git status // get the status of repository
 $ git diff <file> // get the difference 
+$ git log //查看最近git修改日志
 ```
 
+## 版本回退  
+
+```
