@@ -101,3 +101,25 @@ $ git remote rm origin //删除远程库与本地库的联系
 $ git clone git@github.com:zhang-yihang/Notes
 //也可以https://github.com/zhang-yihang/Notes 使用https协议，比较慢
 ```
+
+## 分支
+
+Git鼓励大量使用分支：
+
+查看分支：`git branch`
+
+创建分支：`git branch <name>`
+
+切换分支：`git checkout <name>`或者`git switch <name>`
+
+创建+切换分支：`git checkout -b <name>`或者`git switch -c <name>`
+
+合并某分支到当前分支：`git merge <name>`
+
+删除分支：`git branch -d <name>`
+
+## 标签
+
+- 命令`git tag <tagname>`用于新建一个标签，默认为`HEAD`，也可以指定一个commit id；
+- 命令`git tag -a <tagname> -m "blablabla..."`可以指定标签信息；
+- 命令`git tag`可以查看所有标签。
