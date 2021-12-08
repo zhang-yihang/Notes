@@ -67,11 +67,8 @@ $ git reset --hard Head^  //回退上一个版本
 > 如果一切顺利的话，可以在用户主目录里找到`.ssh`目录，里面有`id_rsa`和`id_rsa.pub`两个文件，这两个就是SSH Key的秘钥对，`id_rsa`是私钥，不能泄露出去，`id_rsa.pub`是公钥，可以放心地告诉任何人。
 
 将id_rsa.pub输入到github中
-
 ### 将本地git推给Github
-
 第一次
-
 ```
 git remote add origin git@github.com:zhang-yihang/Notes //添加远程库 origin
 ```
@@ -88,9 +85,19 @@ To github.com:michaelliao/learngit.git
  * [new branch]      master -> master
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 ```
-
 以后
-
 ```
 $ git push origin master
+```
+### 删除远程库
+```
+$ git remote -v //查看远程库信息
+$ git remote rm origin //删除远程库与本地库的联系
+```
+
+### 从远程库克隆到本地  
+
+```
+$ git clone git@github.com:zhang-yihang/Notes
+//也可以https://github.com/zhang-yihang/Notes 使用https协议，比较慢
 ```
