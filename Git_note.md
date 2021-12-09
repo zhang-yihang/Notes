@@ -16,7 +16,6 @@ $ git status // get the status of repository
 $ git diff <file> // get the difference 
 $ git log //查看最近git修改日志
 $ git reflog //记录版本变化的id
-
 ```
 ## 版本回退  
 ```
