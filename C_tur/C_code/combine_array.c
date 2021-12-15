@@ -61,19 +61,19 @@ int main()
            
             for(int x=1;i+x<num;x++)
             {
-                printf("初始i %d %d\n",r[i][0],r[i][1]);
-                printf("初始i+x %d %d\n",r[i+x][0],r[i+x][1]);
-                printf("can? %d\n",combinable(r[i][0],r[i][1],r[i+x][0],r[i+x][1]));
+                // printf("初始i %d %d\n",r[i][0],r[i][1]);
+                // printf("初始i+x %d %d\n",r[i+x][0],r[i+x][1]);
+                // printf("can? %d\n",combinable(r[i][0],r[i][1],r[i+x][0],r[i+x][1]));
                 
                 if(combinable(r[i][0],r[i][1],r[i+x][0],r[i+x][1]))
                 {
                     
                     bool=0;
                     combine(r[i][0],r[i][1],r[i+x][0],r[i+x][1],r[i]);
-                    printf("combine i %d %d\n",r[i][0],r[i][1]);
+                    //printf("combine i %d %d\n",r[i][0],r[i][1]);
                     r[i+x][0]=-1;
                     r[i+x][1]=-1;
-                    printf("combine i %d %d\n",r[i][0],r[i][1]);
+                    //printf("combine i %d %d\n",r[i][0],r[i][1]);
                 }
             }
 
