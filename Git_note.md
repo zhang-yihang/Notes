@@ -1,4 +1,16 @@
 # Git_note  
+- [Git_note](#git_note)
+  - [create repository](#create-repository)
+  - [add file and commit](#add-file-and-commit)
+  - [commands](#commands)
+  - [版本回退](#版本回退)
+  - [删除文件](#删除文件)
+  - [远程仓库](#远程仓库)
+    - [将本地git推给Github](#将本地git推给github)
+    - [删除远程库](#删除远程库)
+    - [从远程库克隆到本地](#从远程库克隆到本地)
+  - [分支](#分支)
+  - [标签](#标签)
 ## create repository  
 ```
 $ mkdir name_dir
