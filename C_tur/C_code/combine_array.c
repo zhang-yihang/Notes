@@ -19,23 +19,23 @@ int min(int a,int b)
     }
     return min;
 }
-int combinable(int a,int b,int c,int d)
+int combinable(int a[],int b[])
 {
     int ret =1;
-    if(a==-1||b==-1||c==-1||d==-1)
+    if(a[0]==-1||a[1]==-1||b[0]==-1||b[1]==-1)
     {
         ret=0;
     }
-    if(d<a||c>b)
+    if(b[1]<a[0]||b[0]>a[1])
     {
         ret=0;
     }
     return ret;
 }
-void combine(int a,int b,int c,int d,int s[])
+void combine(int a[],int b[],int s[])
 {
-    s[0]=min(a,c);
-    s[1]=max(b,d);
+    s[0]=min(a[0],b[0]);
+    s[1]=max(a[1],b[1]);
 }
 
 int main()
@@ -61,19 +61,18 @@ int main()
            
             for(int x=1;i+x<num;x++)
             {
-                // printf("初始i %d %d\n",r[i][0],r[i][1]);
-                // printf("初始i+x %d %d\n",r[i+x][0],r[i+x][1]);
-                // printf("can? %d\n",combinable(r[i][0],r[i][1],r[i+x][0],r[i+x][1]));
+                printf("初始i %d %d\n",r[i][0],r[i][1]);
+                printf("初始i+x %d %d\n",r[i+x][0],r[i+x][1]);
+                printf("can? %d\n",combinable(r[i],r[i+x]));
                 
-                if(combinable(r[i][0],r[i][1],r[i+x][0],r[i+x][1]))
+                if(combinable(r[i],r[i+x]))
                 {
-                    
                     bool=0;
-                    combine(r[i][0],r[i][1],r[i+x][0],r[i+x][1],r[i]);
-                    //printf("combine i %d %d\n",r[i][0],r[i][1]);
+                    combine(r[i],r[i+x],r[i]);
+                    printf("combine i %d %d\n",r[i][0],r[i][1]);
                     r[i+x][0]=-1;
                     r[i+x][1]=-1;
-                    //printf("combine i %d %d\n",r[i][0],r[i][1]);
+                    printf("combine i %d %d\n",r[i][0],r[i][1]);
                 }
             }
 
