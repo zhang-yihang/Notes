@@ -50,8 +50,11 @@ int len;
 len=sizeof(a)/sizeof(a[0]);
 ```
 ## 数组的赋值
-~~int a[]={1,2,3};~~  
-~~int b[]=a;~~  
+```
+int a[]={1,2,3};  
+int b[]=a;  
+//上面这种是不可以的
+```
 ```
 //只能遍历
 for (i;i<len;i++)
