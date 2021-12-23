@@ -1,29 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 #define MaxSize 100
 #define ElemType int
 
-typedef struct Line *List;
-struct Line
+typedef struct Array_List *ArrayList;
+struct Array_List
 {
     ElemType Data[MaxSize];
     int Last;
 };
-//typedef struct Line MLine;
-//typedef struct Line *List;
-//MLine L;
-//List PtrL;
+
 
 //建立空表
-List mkList()
+ArrayList ArrayList_mkempty()
 {
-    List PtrL;
-    PtrL = (List)malloc(sizeof(struct Line));
+    ArrayList PtrL;
+    PtrL = (ArrayList)malloc(sizeof(struct Array_List));
     PtrL->Last = -1; //表里的第一个元素的Last是0，那么空列表就是-1
     return PtrL;
 }
 // 根据索引查找元素
-ElemType findKth(int K, List PtrL)
+ElemType ArrayList_findKth(int K, ArrayList PtrL)
 {
     ElemType ret;
     if (K < 0 || K > PtrL->Last)
@@ -38,7 +36,7 @@ ElemType findKth(int K, List PtrL)
 }
 
 // 根据元素查找索引
-int find(ElemType X, List PtrL)
+int ArrayList_find(ElemType X, ArrayList PtrL)
 {
     int i = 0;
     int ret = -1;
@@ -54,11 +52,11 @@ int find(ElemType X, List PtrL)
 }
 
 //插入
-void insert(List PtrL, int K, ElemType X)
+void ArrayList_insert(ArrayList PtrL, int K, ElemType X)
 {
     if (PtrL->Last == MaxSize - 1)
     {
-        printf("the List is full\n");
+        printf("the ArrayList is full\n");
         return;
     }
     if (K < 0 || K > PtrL->Last+1)
@@ -77,7 +75,7 @@ void insert(List PtrL, int K, ElemType X)
 }
 
 //删除
-void delet(List PtrL, int K)
+void ArrayList_delet(ArrayList PtrL, int K)
 {
     if (K < 0 || K > PtrL->Last)
     {
@@ -93,51 +91,51 @@ void delet(List PtrL, int K)
 }
 
 //算长度
-int length(List PtrL)
+int ArrayList_len(ArrayList PtrL)
 {
     return PtrL->Last + 1;
 }
 
 //末尾添加
-void append(List L,ElemType X)
+void ArrayList_append(ArrayList L,ElemType X)
 {
-    int K=length(L);
-    insert(L,K,X);
+    int K=ArrayList_len(L);
+    ArrayList_insert(L,K,X);
     return;
 }
 
 int main()
 {
-    List L;
-    L=mkList();
+    ArrayList L;
+    L=ArrayList_mkempty();
     for(int i=0;i<10;i++)
     {
-        append(L,i);
+        ArrayList_append(L,i);
     }
     {
-        for(int i=0;i<length(L);i++)
+        for(int i=0;i<ArrayList_len(L);i++)
         printf("%d ",L->Data[i]);
         printf("Last=%d\n",L->Last);
     }
-    insert(L,3,100);
+    ArrayList_insert(L,3,100);
     {
-        for(int i=0;i<length(L);i++)
+        for(int i=0;i<ArrayList_len(L);i++)
         printf("%d ",L->Data[i]);
         printf("Last=%d\n",L->Last);
     }
-    delet(L,0);
+    ArrayList_delet(L,0);
     {
-        for(int i=0;i<length(L);i++)
+        for(int i=0;i<ArrayList_len(L);i++)
         printf("%d ",L->Data[i]);
         printf("Last=%d\n",L->Last);
     }
     ElemType a;
-    a=findKth(2,L);
+    a=ArrayList_findKth(2,L);
     {
         printf("a=%d\n",a);
     }
     int index;
-    index=find(100,L);
+    index=ArrayList_find(100,L);
     {
         printf("index=%d\n",index);
     }
