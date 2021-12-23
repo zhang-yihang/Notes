@@ -33,6 +33,7 @@
 ```
 #ifndef __List_Head__ //名字随便起，要保证不和其他关键字重复
 #define__List_Head__
+
 int max(int a,int b);
 extern int gall; 声明的时候不需要初始化，定义的地方初始化
 
