@@ -4,6 +4,7 @@
 - [头文件](#头文件)
   - [include的两种方式](#include的两种方式)
   - [头文件的内容](#头文件的内容)
+  - [查看需要什么头文件](#查看需要什么头文件)
 # 宏
 #define Pi 3.14  
 #define cube(x) ((x)*(x)*(x))  
@@ -36,4 +37,8 @@ int max(int a,int b);
 extern int gall; 声明的时候不需要初始化，定义的地方初始化
 
 #endif
+```
+## 查看需要什么头文件
+```
+$ man malloc //举例
 ```
