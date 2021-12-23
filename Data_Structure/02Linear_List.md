@@ -18,6 +18,7 @@
 * void Insert(ElementType X,int i,List L); 插入
 * void Delete(int i,List L); 删除
 * int len(List L);算长度
+* 末尾添加
 
 ## 线性表的储存结构
 ### 顺序储存
