@@ -11,14 +11,17 @@ struct Link_List
 };
 
 //建立空表
-
+LinkList LinkList_mkEmpty()
+{
+    LinkList P = NULL;
+}
 //求表长
 int LinkList_len(LinkList PtrL)
 {
     LinkList p;
     p = PtrL;
     int j = 0;
-    while (p)
+    while (p != NULL)
     {
         p = p->Next;
         j++;
@@ -98,28 +101,28 @@ LinkList LinkList_delet(LinkList PtrL, int K)
         if (s == NULL)
         {
             printf("K is illegal,and LinkList is empty");
-            ret=NULL;
+            ret = NULL;
         }
         else
         {
             PtrL = PtrL->Next;
             free(s);
-            ret= PtrL;
+            ret = PtrL;
         }
     }
     else
     {
         s = LinkList_findKth(PtrL, K - 1);
-        if (s == NULL||s->Next==NULL)
+        if (s == NULL || s->Next == NULL)
         {
             printf("K is illegal");
         }
-        else 
+        else
         {
-            p=s->Next;
-            s->Next=p->Next;
+            p = s->Next;
+            s->Next = p->Next;
             free(p);
-            ret=PtrL;
+            ret = PtrL;
         }
     }
     return ret;
@@ -127,22 +130,64 @@ LinkList LinkList_delet(LinkList PtrL, int K)
 
 int main()
 {
-    LinkList L;
-    for(int i=1;i<3;i++)
+    //test 创建赋值
+    LinkList L = LinkList_mkEmpty();
+    for (int i = 1; i < 10; i++)
     {
-        L=LinkList_insert(L,i,i);
+        L = LinkList_insert(L, i, i);
     }
     {
-        LinkList p=L;
-        for(int i=1;i<LinkList_len(p)+1;i++)
+        LinkList p;
+        p = L;
+        for (int i = 1; i < LinkList_len(L) + 1; i++)
         {
-            printf("%d ",p->Data);
-            p=p->Next;
+            printf("%d ", p->Data);
+            p = p->Next;
+            //printf("%d ",i);
         }
         printf("\n");
-        printf("zyh");
     }
-    
+    //test 查找
+    LinkList zyh;
+    int l = 7;
+    zyh = LinkList_findKth(L, l);
+    printf("ith is %d \n", zyh->Data);
+    printf("pointer of ith is %p \n", zyh);
+    zyh = LinkList_find(L, l);
+    printf("elem i is %d \n", zyh->Data);
+    printf("pointer of elem i is %p \n", zyh);
+
+    //test 添加
+    L = LinkList_insert(L, 3, 103);
+    L = LinkList_insert(L, 1, 101);
+    L = LinkList_insert(L, LinkList_len(L) + 1, 100);
+    {
+        LinkList p;
+        p = L;
+        for (int i = 1; i < LinkList_len(L) + 1; i++)
+        {
+            printf("%d ", p->Data);
+            p = p->Next;
+            //printf("%d ",i);
+        }
+        printf("\n");
+    }
+
+    //test 删除
+    L = LinkList_delet(L, 1);
+    L = LinkList_delet(L, LinkList_len(L));
+    L = LinkList_delet(L, 5);
+    {
+        LinkList p;
+        p = L;
+        for (int i = 1; i < LinkList_len(L) + 1; i++)
+        {
+            printf("%d ", p->Data);
+            p = p->Next;
+            //printf("%d ",i);
+        }
+        printf("\n");
+    }
 
     return 0;
 }
