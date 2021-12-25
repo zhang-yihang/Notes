@@ -18,7 +18,7 @@
 
 ## 树的表示方法1：二叉树
 <!-- ![二叉树图片](./image/binary_tree.png) -->
-<img src="image/binary_tree.JPG" alt="二叉树图片" title="二叉树" width="50%">
+<img src="image/binary_tree.png" alt="二叉树图片" title="二叉树" width="50%">
 
 ### 特殊的二叉树
 * 斜二叉树
@@ -26,5 +26,6 @@
 * 完美二叉树/满二叉树
  > <img src="image/perfect_Btree.jpg" alt="完美二叉树图片" title="完美二叉树" width="50%">
 * 完全二叉树
- > <img src="image/complete_Btree.jpg" alt="完全二叉树图片" title="完全二叉树" width="50%">  
+ > <img src="image/complete_Btree.jpg" alt="完全二叉树图片" title="完全二叉树" width="50%"> 
+ ![二叉树图片](./image/binary_tree.png) 
 
