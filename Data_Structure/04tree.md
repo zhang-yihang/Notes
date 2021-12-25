@@ -1,6 +1,7 @@
 - [树](#树)
   - [树的术语](#树的术语)
   - [树的表示方法1：二叉树](#树的表示方法1二叉树)
+    - [特殊的二叉树](#特殊的二叉树)
 # 树
 ## 树的术语
 * 根root ：节点 
@@ -15,9 +16,15 @@
 * 树的深度(Depth):最大层次
 
 
-
-
 ## 树的表示方法1：二叉树
 <!-- ![二叉树图片](./image/binary_tree.JPG) -->
-<img src="./image/binary_tree.JPG" alt="二叉树图片" title="二叉树" width="50%">
+<img src="image/binary_tree.JPG" alt="二叉树图片" title="二叉树" width="50%">
+
+### 特殊的二叉树
+* 斜二叉树
+ > <img src="image/skewed_Btree.JPG" alt="斜二叉树图片" title="斜二叉树" width="50%">
+* 完美二叉树/满二叉树
+ > <img src="image/perfect_Btree.JPG" alt="完美二叉树图片" title="完美二叉树" width="50%">
+* 完全二叉树
+ > <img src="image/complete_Btree.JPG" alt="完全二叉树图片" title="完全二叉树" width="50%">  
 
