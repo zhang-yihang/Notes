@@ -17,7 +17,7 @@
 
 
 ## 树的表示方法1：二叉树
-<!-- ![二叉树图片](./image/binary_tree.JPG) -->
+<!-- ![二叉树图片](./image/binary_tree.png) -->
 <img src="image/binary_tree.JPG" alt="二叉树图片" title="二叉树" width="50%">
 
 ### 特殊的二叉树
