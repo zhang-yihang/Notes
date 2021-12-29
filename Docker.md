@@ -17,6 +17,8 @@
     - [dockerfile建立数据卷](#dockerfile建立数据卷)
     - [容器间共享数据卷](#容器间共享数据卷)
   - [Dockerfile](#dockerfile)
+    - [关键字](#关键字)
+    - [build](#build)
 # Docker
 ## Introduction
 可以理解为轻量级沙盒机制虚拟机  
@@ -40,6 +42,7 @@ $ docker search //Search the Docker Hub for images
 $ docker pull ubuntu  //Pull an image or a repository from a registry
 $ docker rmi  //Remove one or more images
 $ docker rmi -f $(docker images -qa) //组合命令
+$ docker history {image的名字} //查看image变化历史
 ```
 ### 容器命令
 #### 新建并启动容器
@@ -111,7 +114,7 @@ docker run -it -v /主机绝对路径:/容器内路径:ro image  //read only
 ```
 ### dockerfile建立数据卷
 1. 建立dockerfile
-2. build 生成新镜像
+2. docker build -f {docker file 路径} -t zyh/ubuntu:1.3 .生成新镜像
 3. run 
 通过docker inspect查看主机的路径
 ```
@@ -129,3 +132,21 @@ docker run -it --name c2 --volume-from c1 ubuntu
 ```
 ## Dockerfile
 用于构建image  
+### 关键字
+* FROM ubuntu//当前镜像基于哪个镜像
+* MAINTAINER Zhang-yihang  \<zhang_yihang@126.com\>
+* RUN //后面加需要运行的命令，入shell
+* EXPOSE 当前容器对外的端口
+* WORKDIR /data   //终端登陆后默认进来的目录
+* ENV ZYH_PATH /usr/myfile 用来构建环境变量
+* ADD  //拷贝加解压，后面加压缩文件
+* COPY src dest || COPY ["src","dest"]//拷贝
+* VOLUUME //数据卷
+* CMD 指定容器启动时需要运行的命令，dockerfile 可以有多个CMD，但只有最后一个生效。而且会被docker run 后面的命令替换
+* ENTRYPOINT 与CMD一样，但docker run 后面的命令会被添加
+* ONBUILD 被继承的时候运行
+### build
+```
+$ docker build -t nginx:v3 .
+$ docker build -f {docker file 路径} -t zyh/ubuntu:1.3 .
+```
