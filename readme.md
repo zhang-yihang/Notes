@@ -7,6 +7,7 @@
 * [Computer Network](./Network)
 ### 语言
 * [C](./C_tur)
+* [Shell](./Shell)
 ### 工具
-* [Git](./Git_note.md)
-* [Docker](./Docker.md)
+* [Git](./tools/Git_note.md)
+* [Docker](./tools/Docker.md)
