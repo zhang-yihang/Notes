@@ -14,6 +14,7 @@ struct Link_List
 LinkList LinkList_mkEmpty()
 {
     LinkList P = NULL;
+    return P;
 }
 //求表长
 int LinkList_len(LinkList PtrL)
