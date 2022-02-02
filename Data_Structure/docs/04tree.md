@@ -20,6 +20,7 @@
     - [平衡树](#平衡树)
       - [概念](#概念)
       - [调整](#调整)
+    - [Huffman tree](#huffman-tree)
 # 树
 ## 树的术语
 * 根root ：节点 
@@ -124,3 +125,6 @@ void traversal(BinTree BT)
 但是平衡树插入新的值时会破坏结构，导致不再是平衡树，所以需要相应的调整，调整的测率又LL，LR，RR，RL  
 举例： 
 > <img src="../image/RR.png" alt="平衡树调整图片" title="平衡树的调整" width="70%">
+
+### Huffman tree
+引入权值的概念，希望在权值的影响下，效率最高。
