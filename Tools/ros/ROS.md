@@ -165,7 +165,7 @@ $ catkin_make --source my_src  //如果程序包不在src中，则加上source �
 ```
 # 13.编写简单的Service和Client(C++)  //todo
 # 14.编写简单的Service和Client(python)
-  service脚本放在scripts下  //脚本实例见附录
+  service脚本放在scripts下  //脚本实例见附录  
   $ chmod +x scripts/add_two_ints_server.py  //给脚本执行权限
 # 15.录制与回放
   $ rosbag record -h  //rosbag record -o subset /turtle1/command_velocity /turtle1/pose   //记录两个话题，包名为subset
